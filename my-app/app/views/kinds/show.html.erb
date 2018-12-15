@@ -1,4 +1,4 @@
-<h1>情報一覧</h1>
+<h1><%= @kind.content %> のある講義一覧</h1>
 
 <% if @lectures.any? %>
 <table class="table">
@@ -7,7 +7,6 @@
     <th class="text-center">講義名</th>
     <th class="text-center">講師</th>
     <th class="text-center">年度</th>
-    <th class="text-center">カテゴリー</th>
   </tr>
   <% @lectures.each do |lecture| %>
     <tr>
@@ -15,11 +14,9 @@
       <td class="text-center"><%= lecture.lecture_name.content %></td>
       <td class="text-center"><%= lecture.lecturer.name %></td>
       <td class="text-center"><%= lecture.year %></td>
-      <td class="text-center"><%= lecture.kind.content %></td>
     </tr>
   <% end %>
   <%= paginate @lectures %>
+<% else %>
+  <p>情報はありません</p>
 <% end %>
-
-<p><%= link_to '授業登録ページへ', new_lecture_name_path %></p>
-<p><%= link_to '講師登録ページへ', new_lecturer_path%></p>

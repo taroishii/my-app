@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20181207065908) do
     t.integer  "year"
     t.integer  "kind_id"
     t.string   "content"
+    t.string   "image"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["kind_id"], name: "index_lectures_on_kind_id", using: :btree

@@ -1,2 +1,38 @@
-<h1>Lectures#new</h1>
-<p>Find me in app/views/lectures/new.html.erb</p>
+<div class="text-center">
+  <h1>投稿ページ</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@lecture) do |l| %>
+    
+      <div class="form-group">
+        <%= l.label :lecture_name_id, '講義名' %>
+        <%= l.collection_select(:lecture_name_id, @lecture_names, :id, :content,{}, { class: 'form-control' })  %>
+      </div>
+      <div class="form-group">
+        <%= l.label :lecturer_id, '講師' %>
+        <%= l.collection_select(:lecturer_id, @lecturers, :id, :name,{}, { class: 'form-control' })  %>
+      </div>
+      <div class="form-group">
+        <%= l.label :year, '年度' %>
+        <%= l.select :year, [2018, 2017, 2016], {}, { class: "form-control" } %>
+      </div>
+      <div class="form-group">
+        <%= l.label :kind_id, 'カテゴリー' %>
+        <%= l.collection_select(:kind_id, @kinds, :id, :content,{}, { class: 'form-control' })  %>
+      </div>
+      <div class="form-group">
+        <%= l.label :content, '内容' %>
+        <%= l.text_area :content, class: 'form-control', rows: 5 %>
+      </div>
+      <div class="form-group">
+        <%= l.label :image, '画像' %>
+        <%= l.file_field :image, class: 'form-control' %>
+      </div>
+
+      <%= l.submit '投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+<h1>カテゴリー一覧</h1>
+
+<ul class="media-list">
+  <% @kinds.each do |kind| %>
+    <li class="media">
+      <div class="media-body">
+        <ul>
+          <li><%= link_to kind.content, kind_path(kind)%></li>
+        </ul>
+      </div>
+    </li>
+  <% end %>
+</ul>

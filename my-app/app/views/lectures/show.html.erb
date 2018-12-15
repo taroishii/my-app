@@ -1,2 +1,35 @@
-<h1>Lectures#show</h1>
-<p>Find me in app/views/lectures/show.html.erb</p>
+<h1>id: <%= @lecture.id %> の詳細ページ</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @lecture.id %></td>
+  </tr>
+  <tr>
+    <th>講義名</th>
+    <td><%= @lecture.lecture_name.content %></td>
+  </tr>  
+  <tr>
+    <th>講師</th>
+    <td><%= @lecture.lecturer.name %></td>
+  </tr>
+  <tr>
+    <th>年度</th>
+    <td><%= @lecture.year %></td>
+  </tr>
+  <tr>
+    <th>カテゴリー</th>
+    <td><%= @lecture.kind.content %></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+    <td><%= @lecture.content %></td>
+  </tr>
+  <tr>
+    <th>画像</th>
+    <td class="image"><%= image_tag @lecture.image.url, :size => "200x200" %></td>
+  </tr>
+</table>
+<%= link_to 'Edit', edit_lecture_path(@lecture), class: 'btn btn-success btn-xs' %>
+<%= link_to "Delete", @lecture, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+

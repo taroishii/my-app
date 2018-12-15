@@ -1,0 +1,18 @@
+<h1>講師一覧</h1>
+
+<% if @lecturers.any? %>
+  <ul class="media-list">
+    <% @lecturers.each do |lecturer| %>
+      <li class="media">
+        <div class="media-body">
+          <ul>
+            <li><%= link_to lecturer.name, lecturer_path(lecturer)%></li>
+          </ul>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @lecturers %>
+<% end %>
+
+<p><%= link_to '講師登録ページへ', new_lecturer_path, class: 'btn btn-primary' %></p>

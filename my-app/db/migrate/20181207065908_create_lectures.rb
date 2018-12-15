@@ -6,6 +6,7 @@ class CreateLectures < ActiveRecord::Migration[5.0]
       t.integer :year
       t.references :kind, foreign_key: true
       t.string :content
+      t.string :image
 
       t.timestamps
     end

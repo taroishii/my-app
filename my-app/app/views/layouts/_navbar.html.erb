@@ -12,7 +12,10 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">投稿ページへ</a></li>
+          <li><%= link_to '講義一覧', lecture_names_path %></li>
+          <li><%= link_to '講師一覧', lecturers_path %></li>
+          <li><%= link_to 'カテゴリー一覧', kinds_path %></li>
+          <li><%= link_to '投稿ページへ', new_lecture_path %></li>
         </ul>
       </div>
     </div>

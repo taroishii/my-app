@@ -1,0 +1,18 @@
+<h1>授業一覧</h1>
+
+<% if @lecture_names.any? %>
+  <ul class="media-list">
+    <% @lecture_names.each do |lecture| %>
+      <li class="media">
+        <div class="media-body">
+          <ul>
+            <li><%= link_to lecture.content, lecture_name_path(lecture)%></li>
+          </ul>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @lecture_names %>
+<% end %>
+
+<p><%= link_to '授業登録ページへ', new_lecture_name_path, class: 'btn btn-primary' %></p>

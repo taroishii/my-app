@@ -1,2 +1,20 @@
-<h1>Lecturers#new</h1>
-<p>Find me in app/views/lecturers/new.html.erb</p>
+<div class="text-center">
+  <h1>講師の登録</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(@lecturer) do |l| %>
+
+      <div class="form-group">
+        <%= l.label :name, 'Name' %>
+        <%= l.text_field :name, class: 'form-control' %>
+      </div>
+
+      <%= l.submit '登録', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
+
+<p><%= link_to '講師一覧ページへ', lecturers_path, class: 'btn btn-primary' %></p>

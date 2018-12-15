@@ -1,3 +1,19 @@
-// Place all the styles related to the lectures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+	border-collapse: collapse;
+}
+
+th,td {
+	border: solid 1px #ccc;
+	padding: 5px;
+}
+
+td{
+  width: 500px;
+}
+
+td.image{
+  height:200px;
+}
+th{
+  width: 100px;
+}
